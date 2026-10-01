@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ro">
 
@@ -6,290 +5,712 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cosmin & Flaviana | Detalii</title>
+    <title>Detalii | Cosmin & Flaviana</title>
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
 
     <style>
-
-        :root {
-            --crem: #fcf8ef;
-            --auriu: #c7a45b;
-            --auriu-light: #e2c98b;
-            --verde: #0f5132;
-            --verde-light: #1f6b48;
-            --text: #5d5145;
-        }
 
         * {
             box-sizing: border-box;
         }
 
+
+        html,
         body {
             margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+            background: #e9e2d6;
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            color: #24503f;
+        }
+
+
+        /* PAGINA */
+
+        .page {
+            width: 100%;
+
+            max-width: 900px;
 
             min-height: 100vh;
 
-            font-family: "Cormorant Garamond", serif;
+            margin: 0 auto;
 
-            color: var(--text);
+            background: #faf6ed;
 
-            background:
-                radial-gradient(
-                    circle at top,
-                    white,
-                    transparent 50%
-                ),
-                linear-gradient(
-                    135deg,
-                    #fffdf9,
-                    var(--crem)
-                );
+            position: relative;
+
+            overflow: hidden;
 
             text-align: center;
-
-            padding: 50px 20px;
         }
 
-        .wrapper {
-            max-width: 950px;
-            margin: auto;
+
+        /* LEBEDE SUS */
+
+        .swans-top {
+            width: 100%;
+
+            height: 390px;
+
+            background-image:
+                url("fundal-invitatie.png");
+
+            background-size:
+                100% auto;
+
+            background-position:
+                center bottom;
+
+            background-repeat:
+                no-repeat;
+
+            position: relative;
         }
 
-        .back {
-            display: inline-block;
 
-            margin-bottom: 35px;
+        .swans-top::after {
+            content: "";
 
-            color: var(--verde);
+            position: absolute;
 
-            text-decoration: none;
+            left: 0;
+            right: 0;
+            bottom: 0;
 
-            font-size: 18px;
+            height: 100px;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    transparent,
+                    #faf6ed
+                );
         }
 
-        .title-small {
-            letter-spacing: 5px;
+
+        /* CONȚINUT */
+
+        .content {
+            position: relative;
+
+            padding:
+                10px
+                clamp(45px, 9vw, 110px)
+                80px;
+        }
+
+
+        /* CHENAR */
+
+        .content::before {
+            content: "";
+
+            position: absolute;
+
+            top: -20px;
+
+            left: 25px;
+
+            right: 25px;
+
+            bottom: 25px;
+
+            border:
+                1px solid
+                rgba(174, 134, 52, 0.38);
+
+            pointer-events: none;
+        }
+
+
+        /* TITLU */
+
+        .details-label {
+            color: #24503f;
+
             text-transform: uppercase;
 
-            color: var(--verde);
+            letter-spacing: 4px;
 
-            font-size: 15px;
+            font-size: 14px;
+
+            position: relative;
+
+            z-index: 2;
         }
 
-        h1 {
-            margin: 10px 0;
 
-            font-family: "Great Vibes", cursive;
+        .names {
+            width: 100%;
 
-            font-size: clamp(65px, 10vw, 110px);
+            margin: 5px auto;
+
+            font-family:
+                'Great Vibes',
+                cursive;
+
+            font-size:
+                clamp(
+                    45px,
+                    8vw,
+                    80px
+                );
 
             font-weight: 400;
 
-            background:
-                linear-gradient(
-                    120deg,
-                    #a17c39,
-                    #e5ce91,
-                    #b48d45
-                );
+            color: #b28a36;
 
-            -webkit-background-clip: text;
-            background-clip: text;
+            white-space: nowrap;
 
-            color: transparent;
+            text-align: center;
+
+            position: relative;
+
+            z-index: 2;
         }
+
 
         .date {
-            font-size: 30px;
+            color: #a47c2d;
 
-            color: var(--verde);
+            font-size: 21px;
 
-            letter-spacing: 5px;
+            letter-spacing: 6px;
 
-            margin-bottom: 5px;
+            position: relative;
+
+            z-index: 2;
         }
 
-        .place {
-            font-size: 23px;
+
+        /* LINIE AURIE */
+
+        .gold-divider {
+            width: 130px;
+
+            height: 1px;
+
+            margin: 22px auto;
+
+            background:
+                linear-gradient(
+                    to right,
+                    transparent,
+                    #b28a36,
+                    transparent
+                );
         }
 
-        .place strong {
-            color: var(--auriu);
+
+        /* INTRODUCERE */
+
+        .intro {
+            max-width: 620px;
+
+            margin: 25px auto 35px;
+
+            color: #315e4d;
+
+            font-size: 21px;
+
+            line-height: 1.6;
+
+            position: relative;
+
+            z-index: 2;
         }
 
-        .divider {
-            margin: 35px auto;
 
-            color: var(--auriu);
+        .intro strong {
+            color: #a47c2d;
 
-            font-size: 30px;
+            font-weight: 500;
         }
 
-        .countdown-title {
-            font-size: 28px;
 
-            color: var(--verde);
+        /* EVENIMENTE */
 
-            margin-bottom: 25px;
-        }
+        .event {
+            max-width: 620px;
 
-        .countdown {
-            display: grid;
+            margin: 25px auto;
 
-            grid-template-columns:
-                repeat(4, 1fr);
+            padding: 28px 20px;
 
-            gap: 18px;
+            background:
+                rgba(
+                    255,
+                    253,
+                    247,
+                    0.78
+                );
 
-            max-width: 800px;
+            border:
+                1px solid
+                rgba(
+                    174,
+                    134,
+                    52,
+                    0.48
+                );
 
-            margin: auto;
-        }
-
-        .time-box {
-            padding: 25px 10px;
-
-            background: rgba(255,255,255,.7);
-
-            border: 1px solid rgba(199,164,91,.4);
-
-            border-radius: 12px;
+            border-radius: 14px;
 
             box-shadow:
-                0 15px 35px rgba(73,55,32,.08);
+                0 8px 25px
+                rgba(
+                    70,
+                    50,
+                    20,
+                    0.07
+                );
+
+            position: relative;
+
+            z-index: 2;
         }
 
-        .number {
-            display: block;
+
+        .event-icon {
+            font-size: 40px;
+        }
+
+
+        .event h2 {
+            margin:
+                7px
+                0
+                12px;
+
+            color: #a47c2d;
+
+            font-family:
+                'Great Vibes',
+                cursive;
 
             font-size: 43px;
 
-            color: var(--verde);
-
-            font-weight: 600;
+            font-weight: 400;
         }
 
-        .label {
-            display: block;
 
-            margin-top: 5px;
+        .event-time {
+            color: #24503f;
 
-            color: var(--auriu);
+            font-size: 26px;
 
-            text-transform: uppercase;
-
-            letter-spacing: 2px;
-
-            font-size: 13px;
+            margin-bottom: 8px;
         }
 
-        .info-grid {
-            display: grid;
 
-            grid-template-columns:
-                repeat(2, 1fr);
+        .event-location {
+            color: #315e4d;
 
-            gap: 25px;
-
-            margin-top: 60px;
-        }
-
-        .card {
-            padding: 35px 25px;
-
-            background: rgba(255,255,255,.72);
-
-            border: 1px solid rgba(199,164,91,.35);
-
-            border-radius: 15px;
-
-            box-shadow:
-                0 15px 40px rgba(73,55,32,.08);
-        }
-
-        .icon {
-            font-size: 35px;
-
-            color: var(--auriu);
-
-            margin-bottom: 10px;
-        }
-
-        .card h2 {
-            color: var(--verde);
-
-            font-size: 27px;
-
-            margin: 8px 0;
-        }
-
-        .card p {
-            font-size: 18px;
+            font-size: 21px;
 
             line-height: 1.5;
         }
 
-        .confirm {
-            display: inline-block;
 
-            margin-top: 50px;
+        .event-location strong {
+            color: #8e6b29;
 
-            padding: 16px 40px;
+            font-weight: 600;
+        }
 
-            color: white;
+
+        /* PĂRINȚI */
+
+        .blessing {
+            max-width: 700px;
+
+            margin: 45px auto;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .blessing-title {
+            color: #315e4d;
+
+            font-size: 22px;
+
+            line-height: 1.6;
+
+            margin-bottom: 28px;
+        }
+
+
+        .blessing-title strong {
+            color: #a47c2d;
+
+            font-weight: 500;
+        }
+
+
+        .parents {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 18px;
+        }
+
+
+        .parent-box {
+            padding: 23px 15px;
 
             background:
-                linear-gradient(
-                    135deg,
-                    var(--verde),
-                    var(--verde-light)
+                rgba(
+                    255,
+                    253,
+                    247,
+                    0.76
                 );
+
+            border:
+                1px solid
+                rgba(
+                    174,
+                    134,
+                    52,
+                    0.42
+                );
+
+            border-radius: 12px;
+        }
+
+
+        .parent-title {
+            color: #24503f;
+
+            font-size: 15px;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .family-name {
+            color: #a47c2d;
+
+            font-size: 26px;
+
+            font-weight: 500;
+        }
+
+
+        .parent-names {
+            color: #315e4d;
+
+            font-size: 20px;
+
+            margin-top: 4px;
+        }
+
+
+        /* NAȘI */
+
+        .godparents {
+            max-width: 480px;
+
+            margin: 25px auto 45px;
+
+            padding: 25px 20px;
+
+            background:
+                rgba(
+                    255,
+                    253,
+                    247,
+                    0.76
+                );
+
+            border:
+                1px solid
+                rgba(
+                    174,
+                    134,
+                    52,
+                    0.42
+                );
+
+            border-radius: 12px;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .godparents-title {
+            color: #24503f;
+
+            font-size: 15px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+
+        .godparents-names {
+            margin-top: 10px;
+
+            color: #a47c2d;
+
+            font-family:
+                'Great Vibes',
+                cursive;
+
+            font-size: 37px;
+        }
+
+
+        /* MESAJ FINAL */
+
+        .final-message {
+            max-width: 600px;
+
+            margin: 50px auto 20px;
+
+            color: #315e4d;
+
+            font-size: 20px;
+
+            line-height: 1.6;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .signature {
+            margin-top: 22px;
+
+            color: #a47c2d;
+
+            font-family:
+                'Great Vibes',
+                cursive;
+
+            font-size: 39px;
+        }
+
+
+        /* ÎNAPOI */
+
+        .back {
+            display: inline-block;
+
+            margin-top: 30px;
+
+            color: #24503f;
 
             text-decoration: none;
 
-            border-radius: 50px;
+            border-bottom:
+                1px solid #a47c2d;
 
-            font-size: 18px;
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* BUTON MUZICĂ */
+
+        .music-button {
+            position: fixed;
+
+            right: 18px;
+
+            bottom: 18px;
+
+            width: 50px;
+
+            height: 50px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid #b28a36;
+
+            background:
+                rgba(
+                    255,
+                    253,
+                    247,
+                    0.94
+                );
+
+            color: #a47c2d;
+
+            font-size: 22px;
+
+            cursor: pointer;
+
+            z-index: 999;
 
             box-shadow:
-                0 12px 30px rgba(15,81,50,.25);
-
-            transition: .3s;
+                0 5px 18px
+                rgba(
+                    70,
+                    50,
+                    20,
+                    0.18
+                );
         }
 
-        .confirm:hover {
-            transform: translateY(-4px);
-        }
 
-        @media(max-width:650px) {
+        /* TELEFON */
 
-            body {
-                padding: 30px 15px;
+        @media(max-width: 600px) {
+
+            .swans-top {
+                height: 250px;
             }
 
-            .countdown {
+
+            .content {
+                padding:
+                    5px
+                    38px
+                    60px;
+            }
+
+
+            .content::before {
+                left: 14px;
+
+                right: 14px;
+            }
+
+
+            .names {
+                font-size:
+                    clamp(
+                        36px,
+                        10.5vw,
+                        53px
+                    );
+
+                white-space: nowrap;
+            }
+
+
+            .date {
+                font-size: 18px;
+
+                letter-spacing: 4px;
+            }
+
+
+            .intro {
+                font-size: 18px;
+            }
+
+
+            .parents {
                 grid-template-columns:
-                    repeat(2, 1fr);
+                    1fr 1fr;
+
+                gap: 7px;
             }
 
-            .info-grid {
-                grid-template-columns: 1fr;
+
+            .parent-box {
+                padding:
+                    15px
+                    6px;
             }
 
-            .number {
-                font-size: 35px;
+
+            .parent-title {
+                font-size: 11px;
+
+                letter-spacing: 0;
+            }
+
+
+            .family-name {
+                font-size: 19px;
+            }
+
+
+            .parent-names {
+                font-size: 14px;
+            }
+
+
+            .event {
+                padding:
+                    23px
+                    12px;
+            }
+
+
+            .event h2 {
+                font-size: 37px;
+            }
+
+
+            .event-location {
+                font-size: 18px;
+            }
+
+
+            .godparents-names {
+                font-size: 31px;
+            }
+
+
+            .music-button {
+                width: 44px;
+
+                height: 44px;
+
+                right: 12px;
+
+                bottom: 12px;
+            }
+        }
+
+
+        @media(max-width: 390px) {
+
+            .content {
+                padding-left: 32px;
+
+                padding-right: 32px;
+            }
+
+
+            .names {
+                font-size: 37px;
             }
         }
 
@@ -297,231 +718,487 @@
 
 </head>
 
+
 <body>
 
-<div class="wrapper">
 
-    <a href="index.html" class="back">
-        ← Înapoi la invitație
-    </a>
+<!-- MUZICA -->
 
-    <div class="title-small">
-        Ne căsătorim
-    </div>
+<audio
+    id="backgroundMusic"
+    preload="auto"
+>
+    <source
+        src="music.mp3"
+        type="audio/mpeg"
+    >
+</audio>
 
-    <h1>
-        Cosmin & Flaviana
-    </h1>
 
-    <div class="date">
-        04 • 07 • 2027
-    </div>
+<div class="page">
 
-    <div class="place">
-        <strong>Complex Voievod</strong><br>
-        Sucevița
-    </div>
 
-    <div class="divider">
-        ❦
-    </div>
+    <!-- LEBEDE SUS -->
 
-    <div class="countdown-title">
-        Numărăm zilele până la marea zi
-    </div>
+    <div class="swans-top"></div>
 
-    <div class="countdown">
 
-        <div class="time-box">
-            <span
-                class="number"
-                id="days">
-                0
-            </span>
+    <main class="content">
 
-            <span class="label">
-                zile
-            </span>
+
+        <!-- TITLU -->
+
+        <div class="details-label">
+            Detaliile zilei noastre
         </div>
 
-        <div class="time-box">
-            <span
-                class="number"
-                id="hours">
-                0
-            </span>
 
-            <span class="label">
-                ore
-            </span>
+        <h1 class="names">
+            Cosmin &amp; Flaviana
+        </h1>
+
+
+        <div class="date">
+            04 • 07 • 2027
         </div>
 
-        <div class="time-box">
-            <span
-                class="number"
-                id="minutes">
-                0
-            </span>
 
-            <span class="label">
-                minute
-            </span>
+        <div class="gold-divider"></div>
+
+
+        <!-- INTRODUCERE -->
+
+        <div class="intro">
+
+            Cu binecuvântarea lui
+            <strong>Dumnezeu</strong>
+            și a părinților noștri,
+
+            <br>
+
+            împreună cu nașii noștri dragi,
+
+            <br>
+
+            vă invităm să ne fiți alături
+            în ziua în care ne vom uni
+            destinele înaintea lui Dumnezeu.
+
         </div>
 
-        <div class="time-box">
-            <span
-                class="number"
-                id="seconds">
-                0
-            </span>
 
-            <span class="label">
-                secunde
-            </span>
-        </div>
+        <!-- CUNUNIA RELIGIOASĂ -->
 
-    </div>
+        <section class="event">
 
 
-    <div class="info-grid">
-
-        <div class="card">
-
-            <div class="icon">
-                ♡
+            <div class="event-icon">
+                ⛪
             </div>
 
+
             <h2>
-                Ziua cea mare
+                Cununia religioasă
             </h2>
 
-            <p>
-                Duminică<br>
-                <strong>4 iulie 2027</strong>
-            </p>
 
-        </div>
-
-
-        <div class="card">
-
-            <div class="icon">
-                ♧
+            <div class="event-time">
+                Ora 14:00
             </div>
 
+
+            <div class="gold-divider"></div>
+
+
+            <div class="event-location">
+
+                Biserica
+
+                <strong>
+                    Sfinții Mihail și Gavriil
+                </strong>
+
+                <br>
+
+                Marginea
+
+            </div>
+
+
+        </section>
+
+
+        <!-- PETRECERE -->
+
+        <section class="event">
+
+
+            <div class="event-icon">
+                🥂
+            </div>
+
+
             <h2>
-                Locația
+                Petrecerea
             </h2>
 
-            <p>
+
+            <div class="event-time">
+                Ora 18:00
+            </div>
+
+
+            <div class="gold-divider"></div>
+
+
+            <div class="event-location">
+
+                Vă așteptăm să sărbătorim
+                împreună la
+
+                <br>
+
                 <strong>
                     Complex Voievod
                 </strong>
+
                 <br>
+
                 Sucevița
+
+            </div>
+
+
+        </section>
+
+
+        <!-- PĂRINȚI -->
+
+        <section class="blessing">
+
+
+            <div class="gold-divider"></div>
+
+
+            <div class="blessing-title">
+
+                Cu binecuvântarea lui
+                <strong>Dumnezeu</strong>
+
+                <br>
+
+                și a părinților noștri
+
+            </div>
+
+
+            <div class="parents">
+
+
+                <!-- PĂRINȚII MIRESEI -->
+
+                <div class="parent-box">
+
+
+                    <div class="parent-title">
+                        Părinții miresei
+                    </div>
+
+
+                    <div class="family-name">
+                        Ghiba
+                    </div>
+
+
+                    <div class="parent-names">
+                        Neculai și Maria
+                    </div>
+
+
+                </div>
+
+
+                <!-- PĂRINȚII MIRELUI -->
+
+                <div class="parent-box">
+
+
+                    <div class="parent-title">
+                        Părinții mirelui
+                    </div>
+
+
+                    <div class="family-name">
+                        Munteanu
+                    </div>
+
+
+                    <div class="parent-names">
+                        Viorel și Maria
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- NAȘI -->
+
+        <section class="godparents">
+
+
+            <div class="godparents-title">
+                Alături de nașii noștri
+            </div>
+
+
+            <div class="godparents-names">
+                Mihalescu Ilie &amp; Melissa
+            </div>
+
+
+        </section>
+
+
+        <!-- MESAJ FINAL -->
+
+        <div class="final-message">
+
+
+            <div class="gold-divider"></div>
+
+
+            <p>
+
+                Fericirea este mai frumoasă
+                atunci când este împărtășită
+                cu oamenii dragi.
+
             </p>
+
+
+            <p>
+
+                Vă așteptăm cu drag să ne fiți
+                alături și să transformăm împreună
+                această zi într-o amintire
+                de neuitat.
+
+            </p>
+
+
+            <div class="signature">
+
+                Cu drag,
+
+                <br>
+
+                Cosmin &amp; Flaviana
+
+            </div>
+
 
         </div>
 
-    </div>
+
+        <!-- ÎNAPOI -->
+
+        <a
+            href="index.html"
+            class="back"
+        >
+            ← Înapoi la invitație
+        </a>
 
 
-    <a href="#" class="confirm">
-        Confirmă prezența
-    </a>
+    </main>
+
 
 </div>
 
 
+<!-- BUTON MUZICĂ -->
+
+<button
+    class="music-button"
+    id="musicButton"
+    aria-label="Pornește sau oprește muzica"
+>
+    ♪
+</button>
+
+
 <script>
 
+    /* ==========================
+       MUZICA
+    ========================== */
+
+    const music =
+        document.getElementById("backgroundMusic");
+
+    const musicButton =
+        document.getElementById("musicButton");
+
+
     /*
-        DATA NUNȚII
-
-        4 iulie 2027,
-        ora 16:00
-
-        Dacă nunta începe la altă oră,
-        modifică doar ora de mai jos.
+    Melodia începe de la secunda 30.
     */
 
-    const weddingDate =
-        new Date("July 4, 2027 16:00:00").getTime();
+    const startTime = 30;
 
 
-    function updateCountdown() {
+    /*
+    Volum 35%.
+    */
 
-        const now =
-            new Date().getTime();
-
-        const difference =
-            weddingDate - now;
+    music.volume = 0.35;
 
 
-        if (difference <= 0) {
+    /*
+    Mutăm melodia la secunda 30
+    după încărcarea fișierului.
+    */
 
-            document.getElementById("days").innerHTML = "♡";
-            document.getElementById("hours").innerHTML = "♡";
-            document.getElementById("minutes").innerHTML = "♡";
-            document.getElementById("seconds").innerHTML = "♡";
+    music.addEventListener(
+        "loadedmetadata",
+        function() {
 
-            return;
+            if (music.duration > startTime) {
+
+                music.currentTime = startTime;
+
+            }
+
+        }
+    );
+
+
+    function playMusic() {
+
+        if (
+            music.currentTime < startTime ||
+            music.ended
+        ) {
+
+            music.currentTime = startTime;
+
         }
 
 
-        const days =
-            Math.floor(
-                difference /
-                (1000 * 60 * 60 * 24)
-            );
+        music.play()
+            .then(() => {
 
+                musicButton.textContent = "♫";
 
-        const hours =
-            Math.floor(
-                (difference /
-                (1000 * 60 * 60)) % 24
-            );
+            })
+            .catch(() => {
 
+                musicButton.textContent = "♪";
 
-        const minutes =
-            Math.floor(
-                (difference /
-                (1000 * 60)) % 60
-            );
-
-
-        const seconds =
-            Math.floor(
-                (difference /
-                1000) % 60
-            );
-
-
-        document.getElementById("days")
-            .innerHTML = days;
-
-        document.getElementById("hours")
-            .innerHTML = hours;
-
-        document.getElementById("minutes")
-            .innerHTML = minutes;
-
-        document.getElementById("seconds")
-            .innerHTML = seconds;
+            });
 
     }
 
 
-    updateCountdown();
+    /*
+    Încercăm pornirea automată.
+    */
 
-    setInterval(
-        updateCountdown,
-        1000
+    playMusic();
+
+
+    /*
+    Dacă telefonul blochează autoplay,
+    prima atingere pornește melodia.
+    */
+
+    function firstInteraction() {
+
+        if (music.paused) {
+
+            playMusic();
+
+        }
+
+
+        document.removeEventListener(
+            "click",
+            firstInteraction
+        );
+
+
+        document.removeEventListener(
+            "touchstart",
+            firstInteraction
+        );
+
+    }
+
+
+    document.addEventListener(
+        "click",
+        firstInteraction
+    );
+
+
+    document.addEventListener(
+        "touchstart",
+        firstInteraction
+    );
+
+
+    /*
+    Pornire / pauză din buton.
+    */
+
+    musicButton.addEventListener(
+        "click",
+        function(event) {
+
+            event.stopPropagation();
+
+
+            if (music.paused) {
+
+                playMusic();
+
+            } else {
+
+                music.pause();
+
+                musicButton.textContent = "♪";
+
+            }
+
+        }
+    );
+
+
+    /*
+    Când melodia se termină,
+    reîncepe de la secunda 30.
+    */
+
+    music.addEventListener(
+        "ended",
+        function() {
+
+            music.currentTime = startTime;
+
+            music.play();
+
+        }
     );
 
 </script>
 
+
 </body>
 
 </html>
-```

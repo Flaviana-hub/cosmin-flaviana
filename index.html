@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ro">
 
@@ -11,755 +10,496 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
     <style>
-
-        :root {
-            --crem: #fcf8ef;
-            --crem2: #f5eee1;
-            --auriu: #c8a45d;
-            --auriu-light: #e5cf98;
-            --verde: #075c3a;
-            --verde2: #0d7550;
-            --text: #5d5145;
-        }
 
         * {
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
         }
 
         body {
-            margin: 0;
-
-            min-height: 100vh;
-
-            font-family: "Cormorant Garamond", serif;
-
-            color: var(--text);
-
-            background:
-                radial-gradient(
-                    circle at 50% 20%,
-                    rgba(255,255,255,.98),
-                    transparent 45%
-                ),
-                linear-gradient(
-                    135deg,
-                    #fffefa,
-                    var(--crem),
-                    var(--crem2)
-                );
-
-            overflow-x: hidden;
+            background: #e9e2d6;
+            font-family: 'Cormorant Garamond', serif;
+            color: #1f513e;
         }
 
 
-        /* TEXTURĂ FINĂ */
-
-        body::before {
-            content: "";
-
-            position: fixed;
-
-            inset: 0;
-
-            pointer-events: none;
-
-            opacity: .15;
-
-            background-image:
-                radial-gradient(
-                    var(--auriu) .6px,
-                    transparent .6px
-                );
-
-            background-size: 24px 24px;
-
-            z-index: -1;
-        }
-
-
-        .page {
-            min-height: 100vh;
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            padding: 30px 15px;
-        }
-
+        /* INVITAȚIA */
 
         .invitation {
+            width: 100%;
+            max-width: 900px;
+            min-height: 100vh;
+
+            margin: 0 auto;
 
             position: relative;
 
-            width: min(900px, 100%);
-
-            min-height: 95vh;
-
-            padding: 70px 25px;
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
             text-align: center;
 
-            overflow: hidden;
+            background-image: url("fundal-invitatie.png");
+            background-size: 100% 100%;
+            background-position: center top;
+            background-repeat: no-repeat;
 
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,.96),
-                    rgba(253,248,238,.93)
-                );
-
-            border: 1px solid
-                rgba(200,164,93,.45);
-
-            box-shadow:
-                0 30px 80px
-                rgba(73,55,32,.14);
-        }
-
-
-        /* CHENAR INTERIOR */
-
-        .invitation::before {
-
-            content: "";
-
-            position: absolute;
-
-            inset: 18px;
-
-            border: 1px solid
-                rgba(200,164,93,.4);
-
-            pointer-events: none;
-        }
-
-
-        /* COLȚURI */
-
-        .corner {
-
-            position: absolute;
-
-            width: 80px;
-
-            height: 80px;
-
-            border-color: var(--auriu);
-
-            opacity: .7;
-        }
-
-
-        .top-left {
-
-            top: 28px;
-            left: 28px;
-
-            border-top: 2px solid;
-            border-left: 2px solid;
-        }
-
-
-        .top-right {
-
-            top: 28px;
-            right: 28px;
-
-            border-top: 2px solid;
-            border-right: 2px solid;
-        }
-
-
-        .bottom-left {
-
-            bottom: 28px;
-            left: 28px;
-
-            border-bottom: 2px solid;
-            border-left: 2px solid;
-        }
-
-
-        .bottom-right {
-
-            bottom: 28px;
-            right: 28px;
-
-            border-bottom: 2px solid;
-            border-right: 2px solid;
+            padding:
+                clamp(75px, 8vw, 110px)
+                clamp(70px, 11vw, 135px)
+                clamp(360px, 44vw, 500px);
         }
 
 
         .content {
+            width: 100%;
+            max-width: 650px;
+
+            margin: 0 auto;
 
             position: relative;
-
-            z-index: 5;
-
-            width: 100%;
-
-            max-width: 760px;
+            z-index: 2;
         }
 
 
-        /* TEXT DE SUS */
+        /* CITAT */
 
-        .intro {
+        .quote {
+            max-width: 600px;
 
-            font-size: 15px;
+            margin: 0 auto 30px;
 
-            letter-spacing: 5px;
+            color: #8d6926;
+
+            font-size: clamp(17px, 2.4vw, 23px);
+
+            line-height: 1.5;
+
+            font-style: italic;
+        }
+
+
+        .verse {
+            display: block;
+
+            margin-top: 10px;
+
+            color: #1f513e;
+
+            font-size: clamp(13px, 1.8vw, 16px);
+
+            font-style: normal;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* LINIE AURIE */
+
+        .gold-divider {
+            width: 145px;
+            height: 1px;
+
+            margin: 20px auto;
+
+            background:
+                linear-gradient(
+                    to right,
+                    transparent,
+                    #b28a36,
+                    transparent
+                );
+        }
+
+
+        /* NE CĂSĂTORIM */
+
+        .marry {
+            color: #1f513e;
+
+            font-size: clamp(20px, 3vw, 28px);
+
+            letter-spacing: 3px;
 
             text-transform: uppercase;
 
-            color: var(--verde);
-
-            animation:
-                fadeDown 1.2s ease;
+            margin-bottom: 5px;
         }
 
 
-        .ornament {
+        .noi {
+            color: #8d6926;
 
-            margin: 16px 0;
+            font-size: 17px;
 
-            color: var(--auriu);
+            letter-spacing: 3px;
 
-            font-size: 27px;
+            text-transform: uppercase;
+
+            margin-bottom: 5px;
         }
 
 
         /* NUMELE */
 
         .names {
+            width: 100%;
 
-            margin: 0;
+            margin: 5px auto 12px;
 
-            font-family:
-                "Great Vibes",
-                cursive;
+            font-family: 'Great Vibes', cursive;
 
-            font-size:
-                clamp(70px, 11vw, 125px);
-
-            line-height: .95;
+            font-size: clamp(44px, 8vw, 88px);
 
             font-weight: 400;
 
-            background:
-                linear-gradient(
-                    120deg,
-                    #9b7636,
-                    #e6ce91,
-                    #b48b43,
-                    #f0d99f
-                );
+            line-height: 1.1;
 
-            -webkit-background-clip: text;
+            color: #b28a36;
 
-            background-clip: text;
+            white-space: nowrap;
 
-            color: transparent;
+            text-align: center;
 
-            filter:
-                drop-shadow(
-                    0 6px 10px
-                    rgba(100,70,25,.13)
-                );
-
-            animation:
-                fadeUp 1.5s ease;
-        }
-
-
-        .ampersand {
-
-            color: var(--verde);
-
-            font-size: .65em;
-        }
-
-
-        /* LEBEDELE - IMEDIAT SUB NUME */
-
-        .swans-wrapper {
-
-            position: relative;
-
-            width: 340px;
-
-            height: 190px;
-
-            margin:
-                12px auto 5px;
-        }
-
-
-        .swans {
-
-            position: absolute;
-
-            width: 340px;
-
-            max-width: 100%;
-
-            left: 50%;
-
-            top: 50%;
-
-            transform:
-                translate(-50%, -50%);
-
-            filter:
-                drop-shadow(
-                    0 12px 14px
-                    rgba(45,40,27,.16)
-                );
-
-            animation:
-                swanFloat 5s
-                ease-in-out infinite;
-        }
-
-
-        /*
-        Coronița este plasată deasupra
-        lebedei feminine.
-        */
-
-        .crown {
-
-            position: absolute;
-
-            right: 42px;
-
-            top: 13px;
-
-            font-size: 30px;
-
-            color: var(--auriu);
-
-            transform:
-                rotate(-8deg);
-
-            filter:
-                drop-shadow(
-                    0 3px 3px
-                    rgba(100,70,20,.25)
-                );
-
-            z-index: 3;
+            text-shadow:
+                0 1px 0 #f9edc7,
+                0 2px 5px rgba(105, 75, 20, 0.12);
         }
 
 
         /* DATA */
 
         .date {
+            color: #a47c2d;
 
-            margin-top: 5px;
+            font-size: clamp(23px, 4vw, 34px);
 
-            color: var(--verde);
+            font-weight: 500;
+
+            letter-spacing: clamp(4px, 1vw, 9px);
+
+            margin: 10px 0;
+        }
+
+
+        /* COUNTDOWN */
+
+        .countdown-title {
+            margin-bottom: 15px;
+
+            color: #1f513e;
+
+            font-size: 15px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+
+        .countdown {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: stretch;
+
+            gap: 8px;
+
+            width: 100%;
+        }
+
+
+        .time-box {
+            flex: 1;
+
+            max-width: 115px;
+
+            min-width: 70px;
+
+            padding: 13px 5px;
+
+            background: rgba(255, 253, 247, 0.76);
+
+            border:
+                1px solid
+                rgba(174, 134, 52, 0.62);
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 5px 15px
+                rgba(80, 60, 25, 0.08);
+        }
+
+
+        .number {
+            display: block;
+
+            color: #a47c2d;
 
             font-size: 30px;
 
-            letter-spacing: 6px;
-
             font-weight: 600;
+
+            line-height: 1;
+        }
+
+
+        .label {
+            display: block;
+
+            margin-top: 6px;
+
+            color: #1f513e;
+
+            font-size: 13px;
+
+            letter-spacing: 1px;
         }
 
 
         /* MESAJ */
 
         .message {
+            max-width: 500px;
 
-            max-width: 610px;
+            margin: 25px auto 18px;
 
-            margin:
-                18px auto 25px;
+            color: #315e4d;
 
-            font-size: 21px;
+            font-size: clamp(17px, 2.2vw, 20px);
 
             line-height: 1.5;
         }
 
 
-        /* PROGRAM */
+        /* BUTON DETALII */
 
-        .program {
+        .details-button {
+            display: inline-block;
 
-            margin:
-                35px auto 0;
+            margin-top: 8px;
 
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 20px;
-
-            max-width: 720px;
-        }
-
-
-        .event {
-
-            position: relative;
-
-            padding: 27px 20px;
-
-            background:
-                rgba(255,255,255,.68);
+            padding: 12px 30px;
 
             border:
-                1px solid
-                rgba(200,164,93,.4);
+                1px solid #a47c2d;
 
-            border-radius: 14px;
-
-            box-shadow:
-                0 15px 35px
-                rgba(73,55,32,.07);
-        }
-
-
-        .event::before {
-
-            content: "";
-
-            position: absolute;
-
-            top: 0;
-            left: 20%;
-            right: 20%;
-
-            height: 2px;
+            border-radius: 40px;
 
             background:
                 linear-gradient(
-                    90deg,
-                    transparent,
-                    var(--verde),
-                    transparent
+                    135deg,
+                    #a47c2d,
+                    #d2b366
                 );
-        }
-
-
-        .event-icon {
-
-            font-size: 30px;
-
-            color: var(--auriu);
-
-            margin-bottom: 5px;
-        }
-
-
-        .event h2 {
-
-            margin: 4px 0;
-
-            color: var(--verde);
-
-            font-size: 24px;
-
-            font-weight: 600;
-        }
-
-
-        .event .time {
-
-            font-size: 28px;
-
-            color: var(--auriu);
-
-            font-weight: 600;
-
-            margin: 5px 0;
-        }
-
-
-        .event p {
-
-            margin: 4px 0;
-
-            font-size: 18px;
-
-            line-height: 1.4;
-        }
-
-
-        /* BUTON */
-
-        .button {
-
-            display: inline-flex;
-
-            margin-top: 35px;
-
-            padding: 15px 38px;
-
-            border-radius: 50px;
 
             color: white;
 
             text-decoration: none;
 
-            font-size: 18px;
+            font-size: 17px;
 
             letter-spacing: 1px;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--verde),
-                    var(--verde2)
-                );
-
             box-shadow:
-                0 12px 30px
-                rgba(7,92,58,.25);
+                0 7px 18px
+                rgba(90, 65, 20, 0.18);
 
-            transition: .35s;
+            transition: 0.3s ease;
         }
 
 
-        .button:hover {
-
-            transform:
-                translateY(-4px);
-
-            box-shadow:
-                0 18px 38px
-                rgba(7,92,58,.35);
+        .details-button:hover {
+            transform: translateY(-2px);
         }
 
 
         /* BUTON MUZICĂ */
 
         .music-button {
-
             position: fixed;
 
-            right: 22px;
-            bottom: 22px;
+            right: 18px;
+            bottom: 18px;
 
-            width: 54px;
-            height: 54px;
+            width: 50px;
+            height: 50px;
 
             border-radius: 50%;
 
             border:
-                1px solid
-                var(--auriu);
+                1px solid #b28a36;
 
             background:
-                rgba(255,255,255,.9);
+                rgba(255, 253, 247, 0.94);
 
-            color: var(--verde);
+            color: #a47c2d;
 
-            font-size: 20px;
+            font-size: 22px;
 
             cursor: pointer;
 
+            z-index: 999;
+
             box-shadow:
-                0 10px 25px
-                rgba(0,0,0,.12);
-
-            z-index: 100;
-        }
-
-
-        /* PARTICULE */
-
-        .sparkle {
-
-            position: absolute;
-
-            width: 5px;
-            height: 5px;
-
-            border-radius: 50%;
-
-            background:
-                var(--auriu-light);
-
-            opacity: .6;
-
-            animation:
-                sparkle 5s
-                infinite ease-in-out;
-        }
-
-
-        .s1 {
-            left: 12%;
-            top: 20%;
-        }
-
-        .s2 {
-            left: 83%;
-            top: 18%;
-            animation-delay: 1s;
-        }
-
-        .s3 {
-            left: 15%;
-            top: 73%;
-            animation-delay: 2s;
-        }
-
-        .s4 {
-            left: 87%;
-            top: 70%;
-            animation-delay: 3s;
-        }
-
-        .s5 {
-            left: 25%;
-            top: 15%;
-            animation-delay: 1.5s;
-        }
-
-
-        /* ANIMAȚII */
-
-        @keyframes fadeDown {
-
-            from {
-                opacity: 0;
-                transform:
-                    translateY(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform:
-                    translateY(0);
-            }
-        }
-
-
-        @keyframes fadeUp {
-
-            from {
-                opacity: 0;
-                transform:
-                    translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform:
-                    translateY(0);
-            }
-        }
-
-
-        @keyframes swanFloat {
-
-            0%,100% {
-                transform:
-                    translate(-50%, -50%);
-            }
-
-            50% {
-                transform:
-                    translate(-50%, -55%);
-            }
-        }
-
-
-        @keyframes sparkle {
-
-            0%,100% {
-                transform: scale(.5);
-                opacity: .2;
-            }
-
-            50% {
-                transform: scale(1.8);
-                opacity: .8;
-            }
+                0 5px 18px
+                rgba(70, 50, 20, 0.18);
         }
 
 
         /* TELEFON */
 
-        @media(max-width: 650px) {
-
-            .page {
-                padding: 10px;
-            }
+        @media (max-width: 600px) {
 
             .invitation {
                 padding:
-                    60px 15px;
+                    55px
+                    43px
+                    270px;
+
+                background-size: 100% 100%;
             }
 
-            .invitation::before {
-                inset: 10px;
+
+            .quote {
+                font-size: 15px;
+
+                line-height: 1.4;
+
+                margin-bottom: 18px;
             }
 
-            .corner {
-                width: 55px;
-                height: 55px;
-            }
 
-            .top-left,
-            .top-right {
-                top: 18px;
-            }
-
-            .bottom-left,
-            .bottom-right {
-                bottom: 18px;
-            }
-
-            .intro {
+            .verse {
                 font-size: 11px;
-                letter-spacing: 3px;
+
+                letter-spacing: 1px;
             }
 
-            .swans-wrapper {
-                width: 290px;
-                height: 160px;
+
+            .gold-divider {
+                width: 100px;
+
+                margin: 14px auto;
             }
 
-            .swans {
-                width: 290px;
+
+            .marry {
+                font-size: 16px;
+
+                letter-spacing: 2px;
             }
+
+
+            .noi {
+                font-size: 12px;
+
+                letter-spacing: 2px;
+            }
+
+
+            .names {
+                font-size:
+                    clamp(
+                        36px,
+                        10.5vw,
+                        53px
+                    );
+
+                white-space: nowrap;
+            }
+
 
             .date {
-                font-size: 23px;
+                font-size: 19px;
+
                 letter-spacing: 4px;
             }
 
+
+            .countdown-title {
+                font-size: 10px;
+
+                letter-spacing: 1px;
+
+                margin-bottom: 9px;
+            }
+
+
+            .countdown {
+                gap: 4px;
+            }
+
+
+            .time-box {
+                min-width: 0;
+
+                padding: 8px 2px;
+
+                border-radius: 6px;
+            }
+
+
+            .number {
+                font-size: 20px;
+            }
+
+
+            .label {
+                font-size: 9px;
+
+                letter-spacing: 0;
+            }
+
+
             .message {
-                font-size: 18px;
+                margin: 15px auto 10px;
+
+                font-size: 14px;
             }
 
-            .program {
-                grid-template-columns: 1fr;
+
+            .details-button {
+                padding: 10px 22px;
+
+                font-size: 14px;
             }
 
-            .event {
-                padding: 22px 15px;
+
+            .music-button {
+                width: 44px;
+                height: 44px;
+
+                right: 12px;
+                bottom: 12px;
+            }
+        }
+
+
+        @media (max-width: 390px) {
+
+            .invitation {
+                padding-left: 38px;
+                padding-right: 38px;
+                padding-bottom: 240px;
+            }
+
+
+            .names {
+                font-size: 38px;
+            }
+
+
+            .quote {
+                font-size: 13px;
             }
         }
 
@@ -770,227 +510,434 @@
 
 <body>
 
-<div class="page">
 
-    <div class="invitation">
+<!-- MUZICA -->
 
-        <!-- Colțuri aurii -->
-
-        <div class="corner top-left"></div>
-        <div class="corner top-right"></div>
-        <div class="corner bottom-left"></div>
-        <div class="corner bottom-right"></div>
-
-
-        <!-- Particule aurii -->
-
-        <span class="sparkle s1"></span>
-        <span class="sparkle s2"></span>
-        <span class="sparkle s3"></span>
-        <span class="sparkle s4"></span>
-        <span class="sparkle s5"></span>
+<audio
+    id="backgroundMusic"
+    preload="auto"
+>
+    <source
+        src="music.mp3"
+        type="audio/mpeg"
+    >
+</audio>
 
 
-        <main class="content">
+<!-- INVITAȚIA -->
+
+<main class="invitation">
+
+    <div class="content">
 
 
-            <div class="intro">
-                Cu mare drag vă invităm
-            </div>
+        <!-- CITAT -->
+
+        <div class="quote">
+
+            „Acum dar rămân acestea trei:
+            credința, nădejdea și dragostea,
+            dar cea mai mare dintre ele este dragostea.”
+
+            <span class="verse">
+                I Corinteni 13:13
+            </span>
+
+        </div>
 
 
-            <div class="ornament">
-                ❦
-            </div>
+        <div class="gold-divider"></div>
 
 
-            <!-- NUMELE MIRILOR -->
+        <!-- INTRO -->
 
-            <h1 class="names">
-                Cosmin
-                <span class="ampersand">&</span>
-                Flaviana
-            </h1>
+        <div class="marry">
+            Ne căsătorim!
+        </div>
 
 
-            <!-- LEBEDELE SUNT IMEDIAT SUB NUME -->
-
-            <div class="swans-wrapper">
-
-                <img
-                    class="swans"
-                    src="swans.png"
-                    alt="Două lebede albe"
-                >
-
-                <!-- Coronița lebedei -->
-
-                <div class="crown">
-                    ♕
-                </div>
-
-            </div>
+        <div class="noi">
+            Noi,
+        </div>
 
 
-            <div class="ornament">
-                ✦
-            </div>
+        <!-- NUMELE -->
+
+        <h1 class="names">
+            Cosmin &amp; Flaviana
+        </h1>
 
 
-            <div class="date">
-                04 • 07 • 2027
-            </div>
+        <!-- DATA -->
+
+        <div class="date">
+            04 • 07 • 2027
+        </div>
 
 
-            <p class="message">
-
-                Cu inimile pline de bucurie,
-                vă invităm să ne fiți alături
-                în ziua în care vom spune
-                <strong style="color:#075c3a;">
-                    „Da!”
-                </strong>
-                pentru totdeauna.
-
-            </p>
+        <div class="gold-divider"></div>
 
 
-            <!-- PROGRAMUL NUNȚII -->
+        <!-- COUNTDOWN -->
 
-            <div class="program">
-
-
-                <!-- CUNUNIA RELIGIOASĂ -->
-
-                <div class="event">
-
-                    <div class="event-icon">
-                        ♡
-                    </div>
-
-                    <h2>
-                        Cununia religioasă
-                    </h2>
-
-                    <div class="time">
-                        14:00
-                    </div>
-
-                    <p>
-                        Biserica
-                        <strong>
-                            Sfinții Mihail și Gavriil
-                        </strong>
-                    </p>
-
-                    <p>
-                        Marginea
-                    </p>
-
-                </div>
+        <div class="countdown-title">
+            Până la ziua noastră mai sunt
+        </div>
 
 
-                <!-- PETRECEREA -->
+        <div class="countdown">
 
-                <div class="event">
 
-                    <div class="event-icon">
-                        ✦
-                    </div>
+            <div class="time-box">
 
-                    <h2>
-                        Petrecerea
-                    </h2>
+                <span
+                    class="number"
+                    id="days">
+                    0
+                </span>
 
-                    <div class="time">
-                        18:00
-                    </div>
-
-                    <p>
-                        <strong>
-                            Complex Voievod
-                        </strong>
-                    </p>
-
-                    <p>
-                        Sucevița
-                    </p>
-
-                </div>
+                <span class="label">
+                    zile
+                </span>
 
             </div>
 
 
-            <a
-                href="detalii.html"
-                class="button"
-            >
-                Vezi toate detaliile
-            </a>
+            <div class="time-box">
+
+                <span
+                    class="number"
+                    id="hours">
+                    0
+                </span>
+
+                <span class="label">
+                    ore
+                </span>
+
+            </div>
 
 
-        </main>
+            <div class="time-box">
+
+                <span
+                    class="number"
+                    id="minutes">
+                    0
+                </span>
+
+                <span class="label">
+                    minute
+                </span>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <span
+                    class="number"
+                    id="seconds">
+                    0
+                </span>
+
+                <span class="label">
+                    secunde
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- MESAJ -->
+
+        <p class="message">
+
+            Ne dorim ca această zi să fie
+            și mai frumoasă alături de oamenii
+            dragi nouă.
+
+        </p>
+
+
+        <!-- BUTON DETALII -->
+
+        <a
+            href="detalii.html"
+            class="details-button"
+        >
+            Vezi detaliile nunții
+        </a>
+
 
     </div>
 
-</div>
+</main>
 
 
-<!-- MUZICĂ -->
-
-<audio
-    id="music"
-    loop>
-
-    <source
-        src="music.mp3"
-        type="audio/mpeg">
-
-</audio>
-
+<!-- BUTON MUZICĂ -->
 
 <button
     class="music-button"
     id="musicButton"
-    onclick="toggleMusic()">
-
-    ♫
-
+    aria-label="Pornește sau oprește muzica"
+>
+    ♪
 </button>
 
 
 <script>
 
+    /* ==========================
+       COUNTDOWN
+    ========================== */
+
+    const weddingDate =
+        new Date("2027-07-04T14:00:00").getTime();
+
+
+    function updateCountdown() {
+
+        const now =
+            new Date().getTime();
+
+        const distance =
+            weddingDate - now;
+
+
+        if (distance <= 0) {
+
+            document.getElementById("days").textContent = "0";
+            document.getElementById("hours").textContent = "0";
+            document.getElementById("minutes").textContent = "0";
+            document.getElementById("seconds").textContent = "0";
+
+            return;
+        }
+
+
+        const days =
+            Math.floor(
+                distance /
+                (1000 * 60 * 60 * 24)
+            );
+
+
+        const hours =
+            Math.floor(
+                (distance /
+                (1000 * 60 * 60)) % 24
+            );
+
+
+        const minutes =
+            Math.floor(
+                (distance /
+                (1000 * 60)) % 60
+            );
+
+
+        const seconds =
+            Math.floor(
+                (distance / 1000) % 60
+            );
+
+
+        document.getElementById("days").textContent =
+            days;
+
+        document.getElementById("hours").textContent =
+            hours;
+
+        document.getElementById("minutes").textContent =
+            minutes;
+
+        document.getElementById("seconds").textContent =
+            seconds;
+    }
+
+
+    updateCountdown();
+
+    setInterval(
+        updateCountdown,
+        1000
+    );
+
+
+    /* ==========================
+       MUZICA
+    ========================== */
+
     const music =
-        document.getElementById("music");
+        document.getElementById("backgroundMusic");
 
     const musicButton =
         document.getElementById("musicButton");
 
 
-    function toggleMusic() {
+    /*
+    Melodia începe de la secunda 30.
+
+    Dacă vrei altă secundă,
+    modifici doar cifra 30.
+    */
+
+    const startTime = 30;
+
+
+    /*
+    Volumul melodiei.
+
+    0.35 = 35%
+    */
+
+    music.volume = 0.35;
+
+
+    /*
+    Setăm melodia la secunda 30
+    după ce browserul a încărcat-o.
+    */
+
+    music.addEventListener(
+        "loadedmetadata",
+        function() {
+
+            if (music.duration > startTime) {
+
+                music.currentTime = startTime;
+
+            }
+
+        }
+    );
+
+
+    function playMusic() {
+
+        if (
+            music.currentTime < startTime ||
+            music.ended
+        ) {
+
+            music.currentTime = startTime;
+
+        }
+
+
+        music.play()
+            .then(() => {
+
+                musicButton.textContent = "♫";
+
+            })
+            .catch(() => {
+
+                musicButton.textContent = "♪";
+
+            });
+
+    }
+
+
+    /*
+    Încercăm pornirea automată.
+    */
+
+    playMusic();
+
+
+    /*
+    Dacă telefonul blochează
+    pornirea automată, melodia
+    pornește la prima atingere.
+    */
+
+    function firstInteraction() {
 
         if (music.paused) {
 
-            music.play();
+            playMusic();
 
-            musicButton.innerHTML =
-                "🔊";
-
-        } else {
-
-            music.pause();
-
-            musicButton.innerHTML =
-                "♫";
         }
+
+
+        document.removeEventListener(
+            "click",
+            firstInteraction
+        );
+
+
+        document.removeEventListener(
+            "touchstart",
+            firstInteraction
+        );
+
     }
 
+
+    document.addEventListener(
+        "click",
+        firstInteraction
+    );
+
+
+    document.addEventListener(
+        "touchstart",
+        firstInteraction
+    );
+
+
+    /*
+    Butonul rotund pornește
+    sau oprește muzica.
+    */
+
+    musicButton.addEventListener(
+        "click",
+        function(event) {
+
+            event.stopPropagation();
+
+
+            if (music.paused) {
+
+                playMusic();
+
+            } else {
+
+                music.pause();
+
+                musicButton.textContent = "♪";
+
+            }
+
+        }
+    );
+
+
+    /*
+    Când melodia se termină,
+    reîncepe tot de la secunda 30.
+    */
+
+    music.addEventListener(
+        "ended",
+        function() {
+
+            music.currentTime = startTime;
+
+            music.play();
+
+        }
+    );
+
 </script>
+
 
 </body>
 
 </html>
-```
-
-```
