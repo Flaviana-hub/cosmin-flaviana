@@ -1,0 +1,996 @@
+```html
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cosmin & Flaviana | 04.07.2027</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <style>
+
+        :root {
+            --crem: #fcf8ef;
+            --crem2: #f5eee1;
+            --auriu: #c8a45d;
+            --auriu-light: #e5cf98;
+            --verde: #075c3a;
+            --verde2: #0d7550;
+            --text: #5d5145;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+
+            min-height: 100vh;
+
+            font-family: "Cormorant Garamond", serif;
+
+            color: var(--text);
+
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(255,255,255,.98),
+                    transparent 45%
+                ),
+                linear-gradient(
+                    135deg,
+                    #fffefa,
+                    var(--crem),
+                    var(--crem2)
+                );
+
+            overflow-x: hidden;
+        }
+
+
+        /* TEXTURĂ FINĂ */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            opacity: .15;
+
+            background-image:
+                radial-gradient(
+                    var(--auriu) .6px,
+                    transparent .6px
+                );
+
+            background-size: 24px 24px;
+
+            z-index: -1;
+        }
+
+
+        .page {
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 30px 15px;
+        }
+
+
+        .invitation {
+
+            position: relative;
+
+            width: min(900px, 100%);
+
+            min-height: 95vh;
+
+            padding: 70px 25px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.96),
+                    rgba(253,248,238,.93)
+                );
+
+            border: 1px solid
+                rgba(200,164,93,.45);
+
+            box-shadow:
+                0 30px 80px
+                rgba(73,55,32,.14);
+        }
+
+
+        /* CHENAR INTERIOR */
+
+        .invitation::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 18px;
+
+            border: 1px solid
+                rgba(200,164,93,.4);
+
+            pointer-events: none;
+        }
+
+
+        /* COLȚURI */
+
+        .corner {
+
+            position: absolute;
+
+            width: 80px;
+
+            height: 80px;
+
+            border-color: var(--auriu);
+
+            opacity: .7;
+        }
+
+
+        .top-left {
+
+            top: 28px;
+            left: 28px;
+
+            border-top: 2px solid;
+            border-left: 2px solid;
+        }
+
+
+        .top-right {
+
+            top: 28px;
+            right: 28px;
+
+            border-top: 2px solid;
+            border-right: 2px solid;
+        }
+
+
+        .bottom-left {
+
+            bottom: 28px;
+            left: 28px;
+
+            border-bottom: 2px solid;
+            border-left: 2px solid;
+        }
+
+
+        .bottom-right {
+
+            bottom: 28px;
+            right: 28px;
+
+            border-bottom: 2px solid;
+            border-right: 2px solid;
+        }
+
+
+        .content {
+
+            position: relative;
+
+            z-index: 5;
+
+            width: 100%;
+
+            max-width: 760px;
+        }
+
+
+        /* TEXT DE SUS */
+
+        .intro {
+
+            font-size: 15px;
+
+            letter-spacing: 5px;
+
+            text-transform: uppercase;
+
+            color: var(--verde);
+
+            animation:
+                fadeDown 1.2s ease;
+        }
+
+
+        .ornament {
+
+            margin: 16px 0;
+
+            color: var(--auriu);
+
+            font-size: 27px;
+        }
+
+
+        /* NUMELE */
+
+        .names {
+
+            margin: 0;
+
+            font-family:
+                "Great Vibes",
+                cursive;
+
+            font-size:
+                clamp(70px, 11vw, 125px);
+
+            line-height: .95;
+
+            font-weight: 400;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #9b7636,
+                    #e6ce91,
+                    #b48b43,
+                    #f0d99f
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+
+            filter:
+                drop-shadow(
+                    0 6px 10px
+                    rgba(100,70,25,.13)
+                );
+
+            animation:
+                fadeUp 1.5s ease;
+        }
+
+
+        .ampersand {
+
+            color: var(--verde);
+
+            font-size: .65em;
+        }
+
+
+        /* LEBEDELE - IMEDIAT SUB NUME */
+
+        .swans-wrapper {
+
+            position: relative;
+
+            width: 340px;
+
+            height: 190px;
+
+            margin:
+                12px auto 5px;
+        }
+
+
+        .swans {
+
+            position: absolute;
+
+            width: 340px;
+
+            max-width: 100%;
+
+            left: 50%;
+
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            filter:
+                drop-shadow(
+                    0 12px 14px
+                    rgba(45,40,27,.16)
+                );
+
+            animation:
+                swanFloat 5s
+                ease-in-out infinite;
+        }
+
+
+        /*
+        Coronița este plasată deasupra
+        lebedei feminine.
+        */
+
+        .crown {
+
+            position: absolute;
+
+            right: 42px;
+
+            top: 13px;
+
+            font-size: 30px;
+
+            color: var(--auriu);
+
+            transform:
+                rotate(-8deg);
+
+            filter:
+                drop-shadow(
+                    0 3px 3px
+                    rgba(100,70,20,.25)
+                );
+
+            z-index: 3;
+        }
+
+
+        /* DATA */
+
+        .date {
+
+            margin-top: 5px;
+
+            color: var(--verde);
+
+            font-size: 30px;
+
+            letter-spacing: 6px;
+
+            font-weight: 600;
+        }
+
+
+        /* MESAJ */
+
+        .message {
+
+            max-width: 610px;
+
+            margin:
+                18px auto 25px;
+
+            font-size: 21px;
+
+            line-height: 1.5;
+        }
+
+
+        /* PROGRAM */
+
+        .program {
+
+            margin:
+                35px auto 0;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+
+            max-width: 720px;
+        }
+
+
+        .event {
+
+            position: relative;
+
+            padding: 27px 20px;
+
+            background:
+                rgba(255,255,255,.68);
+
+            border:
+                1px solid
+                rgba(200,164,93,.4);
+
+            border-radius: 14px;
+
+            box-shadow:
+                0 15px 35px
+                rgba(73,55,32,.07);
+        }
+
+
+        .event::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 20%;
+            right: 20%;
+
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--verde),
+                    transparent
+                );
+        }
+
+
+        .event-icon {
+
+            font-size: 30px;
+
+            color: var(--auriu);
+
+            margin-bottom: 5px;
+        }
+
+
+        .event h2 {
+
+            margin: 4px 0;
+
+            color: var(--verde);
+
+            font-size: 24px;
+
+            font-weight: 600;
+        }
+
+
+        .event .time {
+
+            font-size: 28px;
+
+            color: var(--auriu);
+
+            font-weight: 600;
+
+            margin: 5px 0;
+        }
+
+
+        .event p {
+
+            margin: 4px 0;
+
+            font-size: 18px;
+
+            line-height: 1.4;
+        }
+
+
+        /* BUTON */
+
+        .button {
+
+            display: inline-flex;
+
+            margin-top: 35px;
+
+            padding: 15px 38px;
+
+            border-radius: 50px;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 18px;
+
+            letter-spacing: 1px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--verde),
+                    var(--verde2)
+                );
+
+            box-shadow:
+                0 12px 30px
+                rgba(7,92,58,.25);
+
+            transition: .35s;
+        }
+
+
+        .button:hover {
+
+            transform:
+                translateY(-4px);
+
+            box-shadow:
+                0 18px 38px
+                rgba(7,92,58,.35);
+        }
+
+
+        /* BUTON MUZICĂ */
+
+        .music-button {
+
+            position: fixed;
+
+            right: 22px;
+            bottom: 22px;
+
+            width: 54px;
+            height: 54px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                var(--auriu);
+
+            background:
+                rgba(255,255,255,.9);
+
+            color: var(--verde);
+
+            font-size: 20px;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 25px
+                rgba(0,0,0,.12);
+
+            z-index: 100;
+        }
+
+
+        /* PARTICULE */
+
+        .sparkle {
+
+            position: absolute;
+
+            width: 5px;
+            height: 5px;
+
+            border-radius: 50%;
+
+            background:
+                var(--auriu-light);
+
+            opacity: .6;
+
+            animation:
+                sparkle 5s
+                infinite ease-in-out;
+        }
+
+
+        .s1 {
+            left: 12%;
+            top: 20%;
+        }
+
+        .s2 {
+            left: 83%;
+            top: 18%;
+            animation-delay: 1s;
+        }
+
+        .s3 {
+            left: 15%;
+            top: 73%;
+            animation-delay: 2s;
+        }
+
+        .s4 {
+            left: 87%;
+            top: 70%;
+            animation-delay: 3s;
+        }
+
+        .s5 {
+            left: 25%;
+            top: 15%;
+            animation-delay: 1.5s;
+        }
+
+
+        /* ANIMAȚII */
+
+        @keyframes fadeDown {
+
+            from {
+                opacity: 0;
+                transform:
+                    translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        @keyframes fadeUp {
+
+            from {
+                opacity: 0;
+                transform:
+                    translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        @keyframes swanFloat {
+
+            0%,100% {
+                transform:
+                    translate(-50%, -50%);
+            }
+
+            50% {
+                transform:
+                    translate(-50%, -55%);
+            }
+        }
+
+
+        @keyframes sparkle {
+
+            0%,100% {
+                transform: scale(.5);
+                opacity: .2;
+            }
+
+            50% {
+                transform: scale(1.8);
+                opacity: .8;
+            }
+        }
+
+
+        /* TELEFON */
+
+        @media(max-width: 650px) {
+
+            .page {
+                padding: 10px;
+            }
+
+            .invitation {
+                padding:
+                    60px 15px;
+            }
+
+            .invitation::before {
+                inset: 10px;
+            }
+
+            .corner {
+                width: 55px;
+                height: 55px;
+            }
+
+            .top-left,
+            .top-right {
+                top: 18px;
+            }
+
+            .bottom-left,
+            .bottom-right {
+                bottom: 18px;
+            }
+
+            .intro {
+                font-size: 11px;
+                letter-spacing: 3px;
+            }
+
+            .swans-wrapper {
+                width: 290px;
+                height: 160px;
+            }
+
+            .swans {
+                width: 290px;
+            }
+
+            .date {
+                font-size: 23px;
+                letter-spacing: 4px;
+            }
+
+            .message {
+                font-size: 18px;
+            }
+
+            .program {
+                grid-template-columns: 1fr;
+            }
+
+            .event {
+                padding: 22px 15px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<div class="page">
+
+    <div class="invitation">
+
+        <!-- Colțuri aurii -->
+
+        <div class="corner top-left"></div>
+        <div class="corner top-right"></div>
+        <div class="corner bottom-left"></div>
+        <div class="corner bottom-right"></div>
+
+
+        <!-- Particule aurii -->
+
+        <span class="sparkle s1"></span>
+        <span class="sparkle s2"></span>
+        <span class="sparkle s3"></span>
+        <span class="sparkle s4"></span>
+        <span class="sparkle s5"></span>
+
+
+        <main class="content">
+
+
+            <div class="intro">
+                Cu mare drag vă invităm
+            </div>
+
+
+            <div class="ornament">
+                ❦
+            </div>
+
+
+            <!-- NUMELE MIRILOR -->
+
+            <h1 class="names">
+                Cosmin
+                <span class="ampersand">&</span>
+                Flaviana
+            </h1>
+
+
+            <!-- LEBEDELE SUNT IMEDIAT SUB NUME -->
+
+            <div class="swans-wrapper">
+
+                <img
+                    class="swans"
+                    src="swans.png"
+                    alt="Două lebede albe"
+                >
+
+                <!-- Coronița lebedei -->
+
+                <div class="crown">
+                    ♕
+                </div>
+
+            </div>
+
+
+            <div class="ornament">
+                ✦
+            </div>
+
+
+            <div class="date">
+                04 • 07 • 2027
+            </div>
+
+
+            <p class="message">
+
+                Cu inimile pline de bucurie,
+                vă invităm să ne fiți alături
+                în ziua în care vom spune
+                <strong style="color:#075c3a;">
+                    „Da!”
+                </strong>
+                pentru totdeauna.
+
+            </p>
+
+
+            <!-- PROGRAMUL NUNȚII -->
+
+            <div class="program">
+
+
+                <!-- CUNUNIA RELIGIOASĂ -->
+
+                <div class="event">
+
+                    <div class="event-icon">
+                        ♡
+                    </div>
+
+                    <h2>
+                        Cununia religioasă
+                    </h2>
+
+                    <div class="time">
+                        14:00
+                    </div>
+
+                    <p>
+                        Biserica
+                        <strong>
+                            Sfinții Mihail și Gavriil
+                        </strong>
+                    </p>
+
+                    <p>
+                        Marginea
+                    </p>
+
+                </div>
+
+
+                <!-- PETRECEREA -->
+
+                <div class="event">
+
+                    <div class="event-icon">
+                        ✦
+                    </div>
+
+                    <h2>
+                        Petrecerea
+                    </h2>
+
+                    <div class="time">
+                        18:00
+                    </div>
+
+                    <p>
+                        <strong>
+                            Complex Voievod
+                        </strong>
+                    </p>
+
+                    <p>
+                        Sucevița
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="detalii.html"
+                class="button"
+            >
+                Vezi toate detaliile
+            </a>
+
+
+        </main>
+
+    </div>
+
+</div>
+
+
+<!-- MUZICĂ -->
+
+<audio
+    id="music"
+    loop>
+
+    <source
+        src="music.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<button
+    class="music-button"
+    id="musicButton"
+    onclick="toggleMusic()">
+
+    ♫
+
+</button>
+
+
+<script>
+
+    const music =
+        document.getElementById("music");
+
+    const musicButton =
+        document.getElementById("musicButton");
+
+
+    function toggleMusic() {
+
+        if (music.paused) {
+
+            music.play();
+
+            musicButton.innerHTML =
+                "🔊";
+
+        } else {
+
+            music.pause();
+
+            musicButton.innerHTML =
+                "♫";
+        }
+    }
+
+</script>
+
+</body>
+
+</html>
+```
+
+```

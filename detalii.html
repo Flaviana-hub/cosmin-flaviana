@@ -1,0 +1,527 @@
+```html
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Cosmin & Flaviana | Detalii</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        :root {
+            --crem: #fcf8ef;
+            --auriu: #c7a45b;
+            --auriu-light: #e2c98b;
+            --verde: #0f5132;
+            --verde-light: #1f6b48;
+            --text: #5d5145;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+
+            min-height: 100vh;
+
+            font-family: "Cormorant Garamond", serif;
+
+            color: var(--text);
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    white,
+                    transparent 50%
+                ),
+                linear-gradient(
+                    135deg,
+                    #fffdf9,
+                    var(--crem)
+                );
+
+            text-align: center;
+
+            padding: 50px 20px;
+        }
+
+        .wrapper {
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .back {
+            display: inline-block;
+
+            margin-bottom: 35px;
+
+            color: var(--verde);
+
+            text-decoration: none;
+
+            font-size: 18px;
+        }
+
+        .title-small {
+            letter-spacing: 5px;
+            text-transform: uppercase;
+
+            color: var(--verde);
+
+            font-size: 15px;
+        }
+
+        h1 {
+            margin: 10px 0;
+
+            font-family: "Great Vibes", cursive;
+
+            font-size: clamp(65px, 10vw, 110px);
+
+            font-weight: 400;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    #a17c39,
+                    #e5ce91,
+                    #b48d45
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .date {
+            font-size: 30px;
+
+            color: var(--verde);
+
+            letter-spacing: 5px;
+
+            margin-bottom: 5px;
+        }
+
+        .place {
+            font-size: 23px;
+        }
+
+        .place strong {
+            color: var(--auriu);
+        }
+
+        .divider {
+            margin: 35px auto;
+
+            color: var(--auriu);
+
+            font-size: 30px;
+        }
+
+        .countdown-title {
+            font-size: 28px;
+
+            color: var(--verde);
+
+            margin-bottom: 25px;
+        }
+
+        .countdown {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+
+            max-width: 800px;
+
+            margin: auto;
+        }
+
+        .time-box {
+            padding: 25px 10px;
+
+            background: rgba(255,255,255,.7);
+
+            border: 1px solid rgba(199,164,91,.4);
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 15px 35px rgba(73,55,32,.08);
+        }
+
+        .number {
+            display: block;
+
+            font-size: 43px;
+
+            color: var(--verde);
+
+            font-weight: 600;
+        }
+
+        .label {
+            display: block;
+
+            margin-top: 5px;
+
+            color: var(--auriu);
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            font-size: 13px;
+        }
+
+        .info-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+
+            margin-top: 60px;
+        }
+
+        .card {
+            padding: 35px 25px;
+
+            background: rgba(255,255,255,.72);
+
+            border: 1px solid rgba(199,164,91,.35);
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 15px 40px rgba(73,55,32,.08);
+        }
+
+        .icon {
+            font-size: 35px;
+
+            color: var(--auriu);
+
+            margin-bottom: 10px;
+        }
+
+        .card h2 {
+            color: var(--verde);
+
+            font-size: 27px;
+
+            margin: 8px 0;
+        }
+
+        .card p {
+            font-size: 18px;
+
+            line-height: 1.5;
+        }
+
+        .confirm {
+            display: inline-block;
+
+            margin-top: 50px;
+
+            padding: 16px 40px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--verde),
+                    var(--verde-light)
+                );
+
+            text-decoration: none;
+
+            border-radius: 50px;
+
+            font-size: 18px;
+
+            box-shadow:
+                0 12px 30px rgba(15,81,50,.25);
+
+            transition: .3s;
+        }
+
+        .confirm:hover {
+            transform: translateY(-4px);
+        }
+
+        @media(max-width:650px) {
+
+            body {
+                padding: 30px 15px;
+            }
+
+            .countdown {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .number {
+                font-size: 35px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <a href="index.html" class="back">
+        ← Înapoi la invitație
+    </a>
+
+    <div class="title-small">
+        Ne căsătorim
+    </div>
+
+    <h1>
+        Cosmin & Flaviana
+    </h1>
+
+    <div class="date">
+        04 • 07 • 2027
+    </div>
+
+    <div class="place">
+        <strong>Complex Voievod</strong><br>
+        Sucevița
+    </div>
+
+    <div class="divider">
+        ❦
+    </div>
+
+    <div class="countdown-title">
+        Numărăm zilele până la marea zi
+    </div>
+
+    <div class="countdown">
+
+        <div class="time-box">
+            <span
+                class="number"
+                id="days">
+                0
+            </span>
+
+            <span class="label">
+                zile
+            </span>
+        </div>
+
+        <div class="time-box">
+            <span
+                class="number"
+                id="hours">
+                0
+            </span>
+
+            <span class="label">
+                ore
+            </span>
+        </div>
+
+        <div class="time-box">
+            <span
+                class="number"
+                id="minutes">
+                0
+            </span>
+
+            <span class="label">
+                minute
+            </span>
+        </div>
+
+        <div class="time-box">
+            <span
+                class="number"
+                id="seconds">
+                0
+            </span>
+
+            <span class="label">
+                secunde
+            </span>
+        </div>
+
+    </div>
+
+
+    <div class="info-grid">
+
+        <div class="card">
+
+            <div class="icon">
+                ♡
+            </div>
+
+            <h2>
+                Ziua cea mare
+            </h2>
+
+            <p>
+                Duminică<br>
+                <strong>4 iulie 2027</strong>
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                ♧
+            </div>
+
+            <h2>
+                Locația
+            </h2>
+
+            <p>
+                <strong>
+                    Complex Voievod
+                </strong>
+                <br>
+                Sucevița
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <a href="#" class="confirm">
+        Confirmă prezența
+    </a>
+
+</div>
+
+
+<script>
+
+    /*
+        DATA NUNȚII
+
+        4 iulie 2027,
+        ora 16:00
+
+        Dacă nunta începe la altă oră,
+        modifică doar ora de mai jos.
+    */
+
+    const weddingDate =
+        new Date("July 4, 2027 16:00:00").getTime();
+
+
+    function updateCountdown() {
+
+        const now =
+            new Date().getTime();
+
+        const difference =
+            weddingDate - now;
+
+
+        if (difference <= 0) {
+
+            document.getElementById("days").innerHTML = "♡";
+            document.getElementById("hours").innerHTML = "♡";
+            document.getElementById("minutes").innerHTML = "♡";
+            document.getElementById("seconds").innerHTML = "♡";
+
+            return;
+        }
+
+
+        const days =
+            Math.floor(
+                difference /
+                (1000 * 60 * 60 * 24)
+            );
+
+
+        const hours =
+            Math.floor(
+                (difference /
+                (1000 * 60 * 60)) % 24
+            );
+
+
+        const minutes =
+            Math.floor(
+                (difference /
+                (1000 * 60)) % 60
+            );
+
+
+        const seconds =
+            Math.floor(
+                (difference /
+                1000) % 60
+            );
+
+
+        document.getElementById("days")
+            .innerHTML = days;
+
+        document.getElementById("hours")
+            .innerHTML = hours;
+
+        document.getElementById("minutes")
+            .innerHTML = minutes;
+
+        document.getElementById("seconds")
+            .innerHTML = seconds;
+
+    }
+
+
+    updateCountdown();
+
+    setInterval(
+        updateCountdown,
+        1000
+    );
+
+</script>
+
+</body>
+
+</html>
+```
